@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using ChickenFarmExcel.BLL;
+using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using NPOI.HSSF.UserModel;
 using NPOI.HSSF.Util;
@@ -75,25 +76,10 @@ namespace ChickenFarmExcel
         /// <param name="e"></param>
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
-            //验证
-            var checkResult = false;
-            string checkResultStr = "";
-            var webClient = new WebClient { Encoding = Encoding.UTF8 };
-            try
+            string checkResultStr = JiChangTool.CheckServer();
+            if (!string.IsNullOrEmpty(checkResultStr))
             {
-                checkResultStr = webClient.DownloadString("http://sn.ae100.top/check2019.txt");
-                if (checkResultStr == "{check:1}")
-                {
-                    checkResult = true;
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-            if (!checkResult)
-            {
-                MessageBox.Show("远程校验失败，请检查网络或者联系所有人询问授权情况", "提示");
+                MessageBox.Show(checkResultStr, "提示");
                 return;
             }
             //最终整合的数据
@@ -508,7 +494,7 @@ namespace ChickenFarmExcel
                             var _cell = row.CreateCell(3);
                             _cell.SetCellValue(((DateTime)item.ReturnTime).ToString("H:mm:ss"));
                             var lastOut2DateTime = (DateTime)item.Out2;
-                            var timeSpanSub = GetReturnTimeSubLastOut2(i, lstFinalData, ref lastOut2DateTime);
+                            var timeSpanSub = BLL.JiChangTool.GetReturnTimeSubLastOut2(i, lstFinalData, ref lastOut2DateTime);
                             //在1个小时之内
                             if (timeSpanSub > TimeSpan.FromMinutes(18) && timeSpanSub <= TimeSpan.FromMinutes(60))
                             {
@@ -739,42 +725,6 @@ namespace ChickenFarmExcel
 
                 }
             }
-        }
-
-        /// <summary>
-        /// 获取项目时间差
-        /// </summary>
-        /// <param name="finalData"></param>
-        /// <param name="lstFinalData"></param>
-        /// <returns></returns>
-        public TimeSpan GetReturnTimeSubLastOut2(int index, List<FinalData> lstFinalData,ref DateTime lastOut2)
-        {
-            var item = lstFinalData[index];
-            for (int i = index; i < lstFinalData.Count; i++)
-            {
-                if(i< lstFinalData.Count - 1)
-                {
-                    if(lstFinalData[i+1].CarNo != item.CarNo)
-                    {
-                        //说明为该车牌号的最后一条数据
-                        lastOut2 = (DateTime)lstFinalData[i].Out2;
-                        return (DateTime)lstFinalData[i].ReturnTime - (DateTime)lstFinalData[i].Out2;
-
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
-                else
-                {
-                    //最后一个了
-                    lastOut2 = (DateTime)lstFinalData[i].Out2;
-                    return (DateTime)lstFinalData[i].ReturnTime - (DateTime)lstFinalData[i].Out2;
-                }
-            }
-            lastOut2 = (DateTime)item.Out2;
-            return (DateTime)item.ReturnTime - (DateTime)item.Out2;
         }
 
         /// <summary>

@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BLL\JiChangTool.cs" />
     <Compile Include="CSVHelper.cs" />
     <Compile Include="FinalData.cs" />
     <Compile Include="MainWindow.xaml.cs">
