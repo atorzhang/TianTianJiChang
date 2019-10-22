@@ -10,8 +10,8 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="十点半的飞机场 V0.1.5" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Height="29" Width="181" Grid.Column="1" FontSize="16" FontWeight="Bold" Background="#FFB2AFAF"/>
-        <Label Content="本软件所有权归【赖星雨】所有，&#xA;著作权归公司开发者【Jom】所有,&#xA;如未经授权使用本软件进行使用、商业运作、修改软件，&#xA;软件所有人有权保留追究其法律责任&#xD;&#xA;更新时间：2019-04-04" HorizontalAlignment="Left" Margin="34,59,-6,-10" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="100" Width="337"/>
+        <Label Content="天天机场V1.0.0" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Height="29" Width="181" Grid.Column="1" FontSize="16" FontWeight="Bold" Background="#FFB2AFAF"/>
+        <Label Content="本软件著作、修改、使用和所有权归开发者【Ator】所有，&#xA;如未经授权使用本软件进行使用、商业运作、修改软件，&#xA;软件所有人【Ator】有权保留追究其法律责任&#xA;更新时间：2019-10-01" HorizontalAlignment="Left" Margin="34,59,-6,-10" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="100" Width="337"/>
 
     </Grid>
 </Window>

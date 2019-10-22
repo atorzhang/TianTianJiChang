@@ -4,23 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChickenFarmExcel"
-        mc:Ignorable="d" Height="412" MaxHeight="412" MinHeight="412"  Width="543.643" MaxWidth="543.643" MinWidth="543.643" Title="十点半的飞机场V0.1.5">
+        mc:Ignorable="d" Height="450" MaxHeight="450" MinHeight="450"  Width="600" MaxWidth="600" MinWidth="600" Title="天天机场V1.0.0">
     <Grid Margin="0,0,0,1" HorizontalAlignment="Left" Width="528">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="33"/>
             <ColumnDefinition Width="144*"/>
             <ColumnDefinition Width="58*"/>
             <ColumnDefinition Width="132*"/>
             <ColumnDefinition Width="154*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnView" Content="浏览" Grid.Column="3" HorizontalAlignment="Left" Margin="12,11,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="BtnView_Click" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtSource" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="27,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="文件夹位置" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnView" Content="浏览" Grid.Column="4" HorizontalAlignment="Left" Margin="17,11,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="BtnView_Click" Background="#FF4CEC8E" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" Foreground="#FF062E74" FontWeight="Bold"/>
+        <TextBox x:Name="txtSource" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="27,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Text="文件夹位置" Grid.ColumnSpan="3"/>
         <Label Content="源文件夹" HorizontalAlignment="Left" Margin="0,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.217,0.346" Grid.Column="1" Height="26" Width="60" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtScreen" Grid.Column="1" Height="332" Margin="4,40,-4,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="使用说明：&#xD;&#xA;本软件版权、所有权归[赖星雨]所有,如非授权请勿擅自演示,修改和使用,否则保留追究法律责任" Grid.ColumnSpan="5" TextChanged="TxtScreen_TextChanged"/>
-        <Button x:Name="btnCreate" Content="开始生成" Grid.Column="5" HorizontalAlignment="Left" Margin="69,5,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="#FF287CF5" Click="BtnCreate_Click" BorderBrush="{x:Null}" Height="33"/>
-        <Button x:Name="btnAbort" Content="关于" Grid.Column="4" HorizontalAlignment="Left" Margin="35,11,0,0" VerticalAlignment="Top" Width="75" Click="BtnAbort_Click" Height="22"/>
-        <CheckBox x:Name="cekJZ" Content="归队校正" Grid.Column="4" HorizontalAlignment="Left" Margin="119,15,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" IsChecked="True"/>
+        <TextBox x:Name="txtScreen" Grid.Column="1" Height="368" Margin="4,40,-51,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="使用说明：&#xA;本软件版权、所有权归开发者[Ator]所有,如非授权请勿擅自演示,修改和使用,否则保留追究法律责任" Grid.ColumnSpan="5" TextChanged="TxtScreen_TextChanged"/>
+        <Button x:Name="btnCreate" Content="开始生成" Grid.Column="5" HorizontalAlignment="Left" Margin="130,4,-51,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="#FF287CF5" Click="BtnCreate_Click" BorderBrush="{x:Null}" Height="33"/>
+        <Button x:Name="btnAbort" Content="关于" Grid.Column="4" HorizontalAlignment="Left" Margin="100,11,0,0" VerticalAlignment="Top" Width="75" Click="BtnAbort_Click" Height="22" FontWeight="Bold" Foreground="#FFB22828" Background="#FF959595" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="cekJZ" Content="归队校正" Grid.Column="5" HorizontalAlignment="Left" Margin="53,14,0,0" VerticalAlignment="Top" IsChecked="True"/>
 
     </Grid>
 </Window>

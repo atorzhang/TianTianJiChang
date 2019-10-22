@@ -81,7 +81,7 @@ namespace ChickenFarmExcel
             var webClient = new WebClient { Encoding = Encoding.UTF8 };
             try
             {
-                checkResultStr = webClient.DownloadString("http://www.ae100.top/SNCheck/check1.json");
+                checkResultStr = webClient.DownloadString("http://sn.ae100.top/check2019.txt");
                 if (checkResultStr == "{check:1}")
                 {
                     checkResult = true;
@@ -108,7 +108,7 @@ namespace ChickenFarmExcel
                 return;
             }
             //生成Excel
-            this.txtScreen.Text += $"卖力工作中...\r\n";
+            this.txtScreen.Text += $"工作中...\r\n";
             //this.txtScreen.Text += $"竭尽全力...>_<.....\r\n";
             //this.txtScreen.Text += $"为了静香...>_<.....\r\n";
             //this.txtScreen.Text += $"...>_<.....\r\n";
